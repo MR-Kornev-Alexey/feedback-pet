@@ -1,4 +1,17 @@
 {
   "name": "project-nuxt-amaya",
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.6.0",
+  "private": true,
+  "version": "0.0.1",
+  "engines": {
+    "node": "20.x"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "dependencies": {
+    "concurrently": "^9.0.1",
+    "hostile": "^1.4.0",
+    "jsonata": "^2.0.5"
+  }
 }

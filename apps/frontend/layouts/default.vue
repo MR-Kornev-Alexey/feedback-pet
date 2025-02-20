@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <header>
-      <h1>Мой сайт</h1>
+      <h1>Отзывы</h1>
       <nav>
         <NuxtLink to="/">Главная</NuxtLink> |
         <NuxtLink to="/admin">Админка</NuxtLink>
