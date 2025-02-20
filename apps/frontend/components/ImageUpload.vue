@@ -48,7 +48,7 @@ const uploadImages = async () => {
   });
 
   try {
-    const response = await fetch("http://localhost:3001/upload", {
+    const response = await fetch("http://localhost:3001/api/upload", {
       method: "POST",
       body: formData,
     });
@@ -68,6 +68,6 @@ const uploadImages = async () => {
 
 <style scoped>
 .v-container {
-  min-height: 100vh;
+  min-height: 50vh;
 }
 </style>

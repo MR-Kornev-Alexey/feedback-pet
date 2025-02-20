@@ -4,6 +4,7 @@ import { createServer } from "http";
 import { Server as SocketIOServer } from "socket.io";
 import dotenv from "dotenv";
 import { setupSockets } from "./sockets";
+import uploadRouter from './upload';
 
 dotenv.config();
 
@@ -19,6 +20,9 @@ app.use(express.json());
 
 // Настройка Socket.io
 setupSockets(io);
+
+// Подключаем роутер для загрузки
+app.use(uploadRouter);
 
 // Пример маршрута
 app.get("/api/health", (req, res) => {

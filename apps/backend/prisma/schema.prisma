@@ -7,14 +7,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Feedback {
+model feedback {
   id        String   @id @default(uuid())
   stars     Int
   text      String
   customer  String
-  orderLine Int
-  urlImage  String
-  show      Boolean  @default(true)
+  orderLine Int?
+  // urlImage теперь заменяем на связь
+  imageId   String? // Если связь может отсутствовать
+  image     images?  @relation(fields: [imageId], references: [id])
+  show      Boolean? @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+}
+
+model images {
+  id        String     @id @default(uuid())
+  name      String
+  urlImage  String // Единый адрес из minio
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  feedbacks feedback[] // Одна картинка может быть у многих отзывов
 }
