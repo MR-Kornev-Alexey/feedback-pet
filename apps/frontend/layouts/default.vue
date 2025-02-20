@@ -1,8 +1,8 @@
 <template>
-  <v-container>
-    <header>
-      <h1>Отзывы</h1>
-      <nav>
+  <v-container class="flex flex-col justify-center items-center" >
+    <header class="header">
+      <h1 >Отзывы</h1>
+      <nav class="nav">
         <NuxtLink to="/">Главная</NuxtLink> |
         <NuxtLink to="/admin">Админка</NuxtLink>
       </nav>
@@ -10,12 +10,19 @@
     <main>
       <slot /> <!-- Сюда будут подставляться страницы -->
     </main>
-    <footer>
-      <p>&copy; 2023 Мой сайт</p>
+    <footer class="footer">
+      <p>&copy; 2025 Kornev Alexey</p>
     </footer>
     </v-container>
 </template>
 
-<style>
-/* Общие стили для макета */
+<style scoped>
+.header, .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 </style>
