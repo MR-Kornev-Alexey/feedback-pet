@@ -1,7 +1,8 @@
 <template>
   <v-container class="d-flex flex-column align-center justify-center">
-    <v-card class="pa-4" max-width="500">
-      <v-card-title>Загрузка изображений</v-card-title>
+    <h3>Загрузка изображений</h3>
+    <v-card class="pa-4" max-width="500" width="100%">
+      <v-card-title></v-card-title>
       <v-card-text>
         <v-file-input
             v-model="selectedFiles"
@@ -67,7 +68,5 @@ const uploadImages = async () => {
 </script>
 
 <style scoped>
-.v-container {
-  min-height: 50vh;
-}
+
 </style>

@@ -1,43 +1,50 @@
 <template>
-  <v-sheet class="d-flex align-center justify-center">
+  <v-sheet class="d-flex flex-column align-center justify-center">
+    <h2>Админка</h2>
     <v-sheet class="ma-2 pa-2 d-flex flex-column align-center justify-center text-center">
-      <h2>Админка</h2>
-      <ImageUpload />
-      <Form />
+      <Form :images="images" />
+    </v-sheet>
+    <v-sheet class="ma-2 pa-2 d-flex flex-column align-center justify-center text-center">
       <div v-if="images.length > 0" class="mt-4">
-        <h3>Список изображений</h3>
-        <div v-for="image in images" :key="image.id" class="mb-4">
-          <img :src="image.urlImage" :alt="image.name" class="img-thumbnail" />
-        </div>
+        <h3>Изображения для вставки в отзыв</h3>
+        <v-row class="d-flex" dense>
+          <v-col
+              v-for="image in images"
+              :key="image.id"
+              cols="auto"
+              class="d-flex align-center justify-center"
+          >
+            <img :src="image.urlImage" :alt="image.name" class="img-thumbnail" />
+          </v-col>
+        </v-row>
       </div>
       <div v-else class="mt-4">
         <p>Нет изображений для отображения.</p>
       </div>
+      <ImageUpload />
     </v-sheet>
   </v-sheet>
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import ImageUpload from '~/components/ImageUpload.vue';
 import Form from '~/components/Form.vue';
-// Состояние для списка изображений
-const images = useState('images', () => []);
 
-// Загружаем список изображений с бэкенда
-const { data, error } = await useFetch('http://localhost:3001/api/images');
+// Используем useFetch напрямую
+const { data: imagesData, error } = useFetch('http://localhost:3001/api/images');
+
+const images = computed(() => imagesData.value?.allImages || []);
 
 if (error.value) {
   console.error('Ошибка при получении изображений:', error.value);
-} else if (data.value) {
-  images.value = data.value.allImages; // Помещаем изображения в стейт
 }
 </script>
 
 <style scoped>
-/* Стили для админки */
 .img-thumbnail {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 180px;
+  max-height: 180px;
   object-fit: cover;
   margin: 10px;
 }
