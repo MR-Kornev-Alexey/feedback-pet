@@ -1064,7 +1064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.15.4, @nuxt/kit@npm:^3.0.0, @nuxt/kit@npm:^3.15.0, @nuxt/kit@npm:^3.15.4":
+"@nuxt/kit@npm:3.15.4, @nuxt/kit@npm:^3.0.0, @nuxt/kit@npm:^3.14.159, @nuxt/kit@npm:^3.15.0, @nuxt/kit@npm:^3.15.4":
   version: 3.15.4
   resolution: "@nuxt/kit@npm:3.15.4"
   dependencies:
@@ -6046,6 +6046,7 @@ __metadata:
     "@nuxt/schema": "npm:^3.0.0"
     "@types/node": "npm:^22.13.4"
     nuxt: "npm:^3.0.0"
+    nuxt-swiper: "npm:2.0.0"
     pkg-types: "npm:^1.3.1"
     sass: "npm:^1.85.0"
     scule: "npm:^1.3.0"
@@ -6059,6 +6060,16 @@ __metadata:
     vuetify: "npm:^3.7.12"
   languageName: unknown
   linkType: soft
+
+"nuxt-swiper@npm:2.0.0":
+  version: 2.0.0
+  resolution: "nuxt-swiper@npm:2.0.0"
+  dependencies:
+    "@nuxt/kit": "npm:^3.14.159"
+    swiper: "npm:^11.1.14"
+  checksum: 10c0/26827ccc01a52f285837b594ffd9ff924eed62425c1c6f98b0badfe0af832597653f7ca32e9ff40138bd242fbc3ecc7adbad097ffe744c8a131f24cdbcff1b40
+  languageName: node
+  linkType: hard
 
 "nuxt@npm:^3.0.0":
   version: 3.15.4
@@ -7945,7 +7956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:^11.2.4":
+"swiper@npm:^11.1.14, swiper@npm:^11.2.4":
   version: 11.2.4
   resolution: "swiper@npm:11.2.4"
   checksum: 10c0/911c405a2d7feae9ac59d8b6683c40e50f6f5be8ca5c5e44673647c37e319a564417b813dc79a09da034e8fe927b2883253fe72cd8efecfcc09247f669fd5a30

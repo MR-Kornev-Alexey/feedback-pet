@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h1>Главная страница</h1>
+  <v-container>
+    <div class="d-flex justify-center align-center my-3">
+      <h1 >Главная страница</h1>
+    </div>
     <SwiperCarousel :feedback="feedback" />
-  </div>
+  </v-container>
 </template>
 
 <script setup>
